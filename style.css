@@ -1,0 +1,144 @@
+/* বেসিক রিসেট */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0f172a; /* ডার্ক ব্যাকগ্রাউন্ড */
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.content {
+    max-width: 600px;
+}
+
+.tag {
+    background: #3b82f6;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 60px;
+    line-height: 1.1;
+    margin: 20px 0;
+    background: linear-gradient(to right, #ffffff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    color: #94a3b8;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* কাউন্টডাউন ডিজাইন */
+.countdown {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    width: 80px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.time-box span {
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+    color: #3b82f6;
+}
+
+.time-box small {
+    font-size: 12px;
+    color: #cbd5e1;
+}
+
+/* বাটন ডিজাইন */
+.notify-btn {
+    padding: 15px 40px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.notify-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* ডেকোরেটিভ সার্কেল (Design Element) */
+.graphic {
+    position: relative;
+}
+
+.circle {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, #3b82f6, #a855f7);
+    border-radius: 50%;
+    filter: blur(80px); /* গ্লো ইফেক্ট */
+    opacity: 0.6;
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* মোবাইল রেস্পনসিভ */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        width: 90%;
+    }
+    
+    .countdown {
+        justify-content: center;
+    }
+    
+    h1 {
+        font-size: 40px;
+    }
+    
+    .graphic {
+        display: none; /* মোবাইলে গ্রাফিক লুকানো থাকবে */
+    }
+}
