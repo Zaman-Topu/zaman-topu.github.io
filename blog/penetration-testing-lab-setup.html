@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO Meta Tags -->
+    <title>পেনিট্রেশন টেস্টিং ল্যাব সেটআপ - তৌফিক জামান</title>
+    <meta name="description"
+        content="VirtualBox এবং Kali Linux ব্যবহার করে নিজের পেনিট্রেশন টেস্টিং ল্যাব তৈরির সম্পূর্ণ বাংলা গাইড।" />
+    <meta name="keywords"
+        content="Penetration Testing, Kali Linux, VirtualBox, Ethical Hacking, পেনিট্রেশন টেস্টিং, সাইবার নিরাপত্তা" />
+    <meta name="author" content="Toufique Zaman Topu" />
+
+    <link rel="icon" type="image/svg+xml" href="../assets/image/favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../assets/css/blog.css" />
+    <link rel="stylesheet" href="../assets/css/blog-post.css" />
+    <link rel="stylesheet" href="../assets/css/blog-post-lang-toggle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bangla-mode">
+    <!-- Language Toggle Button -->
+    <button class="lang-toggle-post" id="langTogglePost">
+        <i class="bi bi-translate"></i>
+        <span id="langTextPost">English</span>
+    </button>
+
+    <!-- Post Header -->
+    <section class="post-header">
+        <div class="container">
+            <a href="../blog.html" class="back-to-blog">
+                <i class="bi bi-arrow-left"></i>
+                <span data-bn="ব্লগে ফিরুন" data-en="Back to Blog">ব্লগে ফিরুন</span>
+            </a>
+
+            <div class="post-meta-top">
+                <span class="category-badge tutorial" data-bn="টিউটোরিয়াল" data-en="Tutorial">টিউটোরিয়াল</span>
+                <span class="post-date"><i class="bi bi-calendar3"></i> <span data-bn="৫ ফেব্রুয়ারি, ২০২৬"
+                        data-en="February 5, 2026">৫ ফেব্রুয়ারি, ২০২৬</span></span>
+                <span class="read-time"><i class="bi bi-clock"></i> <span data-bn="১২ মিনিট" data-en="12 min read">১২
+                        মিনিট</span></span>
+            </div>
+
+            <h1 class="post-title" data-bn="পেনিট্রেশন টেস্টিং ল্যাব সেটআপ করার সম্পূর্ণ গাইড"
+                data-en="Complete Guide to Setting Up a Penetration Testing Lab">পেনিট্রেশন টেস্টিং ল্যাব সেটআপ করার
+                সম্পূর্ণ গাইড</h1>
+            <p class="post-subtitle"
+                data-bn="VirtualBox এবং Kali Linux ব্যবহার করে নিজের হ্যাকিং ল্যাব তৈরি করুন - ধাপে ধাপে বাংলা টিউটোরিয়াল"
+                data-en="Create your own hacking lab using VirtualBox and Kali Linux - step-by-step Bangla tutorial">
+                VirtualBox এবং Kali Linux ব্যবহার করে নিজের হ্যাকিং ল্যাব তৈরি করুন - ধাপে ধাপে বাংলা টিউটোরিয়াল
+            </p>
+
+            <div class="author-section">
+                <img src="../assets/image/topu-portfolio.png" alt="তৌফিক জামান" class="author-avatar-large">
+                <div class="author-details">
+                    <h4 data-bn="তৌফিক জামান টপু" data-en="Toufique Zaman Topu">তৌফিক জামান টপু</h4>
+                    <p data-bn="সাইবার নিরাপত্তা উৎসাহী | Ethical Hacker"
+                        data-en="Cybersecurity Enthusiast | Ethical Hacker">সাইবার নিরাপত্তা উৎসাহী | Ethical Hacker</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Content -->
+    <article class="post-content">
+        <div class="container">
+            <div class="content-wrapper">
+
+                <h2 data-bn="কেন পেনিট্রেশন টেস্টিং ল্যাব দরকার?" data-en="Why Do You Need a Penetration Testing Lab?">
+                    কেন পেনিট্রেশন টেস্টিং ল্যাব দরকার?</h2>
+                <p data-bn="আপনি যদি ethical hacking শিখতে চান, তাহলে অবশ্যই আপনার নিজের একটি নিরাপদ ল্যাব দরকার। বাস্তব সিস্টেমে হ্যাকিং চেষ্টা করা বেআইনি এবং অনৈতিক। একটি নিয়ন্ত্রিত পরিবেশে অনুশীলন করাই সবচেয়ে ভালো পদ্ধতি।"
+                    data-en="If you want to learn ethical hacking, you definitely need your own safe lab. Attempting to hack real systems is illegal and unethical. Practicing in a controlled environment is the best method.">
+                    আপনি যদি ethical hacking শিখতে চান, তাহলে অবশ্যই আপনার নিজের একটি নিরাপদ ল্যাব দরকার। বাস্তব
+                    সিস্টেমে হ্যাকিং চেষ্টা করা বেআইনি এবং অনৈতিক। একটি নিয়ন্ত্রিত পরিবেশে অনুশীলন করাই সবচেয়ে ভালো
+                    পদ্ধতি।
+                </p>
+
+                <h2 data-bn="যা যা লাগবে" data-en="What You'll Need">যা যা লাগবে</h2>
+                <ul>
+                    <li data-bn="একটি কম্পিউটার (কমপক্ষে 8GB RAM)" data-en="A computer (minimum 8GB RAM)">একটি কম্পিউটার
+                        (কমপক্ষে 8GB RAM)</li>
+                    <li data-bn="VirtualBox সফটওয়্যার (ফ্রি)" data-en="VirtualBox software (free)">VirtualBox
+                        সফটওয়্যার (ফ্রি)</li>
+                    <li data-bn="Kali Linux ISO (ফ্রি ডাউনলোড)" data-en="Kali Linux ISO (free download)">Kali Linux ISO
+                        (ফ্রি ডাউনলোড)</li>
+                    <li data-bn="Metasploitable 2 বা অন্য vulnerable VM"
+                        data-en="Metasploitable 2 or other vulnerable VM">Metasploitable 2 বা অন্য vulnerable VM</li>
+                    <li data-bn="ইন্টারনেট সংযোগ (ডাউনলোডের জন্য)" data-en="Internet connection (for downloads)">
+                        ইন্টারনেট সংযোগ (ডাউনলোডের জন্য)</li>
+                </ul>
+
+                <div class="alert-box info">
+                    <i class="bi bi-info-circle"></i>
+                    <div>
+                        <strong data-bn="গুরুত্বপূর্ণ:" data-en="Important:">গুরুত্বপূর্ণ:</strong>
+                        <span
+                            data-bn="সব সফটওয়্যার অফিশিয়াল ওয়েবসাইট থেকে ডাউনলোড করুন। তৃতীয় পক্ষের সাইট থেকে ডাউনলোড করবেন না।"
+                            data-en="Download all software from official websites. Don't download from third-party sites.">
+                            সব সফটওয়্যার অফিশিয়াল ওয়েবসাইট থেকে ডাউনলোড করুন। তৃতীয় পক্ষের সাইট থেকে ডাউনলোড করবেন
+                            না।
+                        </span>
+                    </div>
+                </div>
+
+                <h2 data-bn="ধাপ ১: VirtualBox ইনস্টল করা" data-en="Step 1: Installing VirtualBox">ধাপ ১: VirtualBox
+                    ইনস্টল করা</h2>
+                <p data-bn="VirtualBox একটি ফ্রি virtualization সফটওয়্যার যা দিয়ে আপনি আপনার কম্পিউটারে একাধিক অপারেটিং সিস্টেম চালাতে পারবেন।"
+                    data-en="VirtualBox is free virtualization software that lets you run multiple operating systems on your computer.">
+                    VirtualBox একটি ফ্রি virtualization সফটওয়্যার যা দিয়ে আপনি আপনার কম্পিউটারে একাধিক অপারেটিং
+                    সিস্টেম চালাতে পারবেন।
+                </p>
+
+                <ol>
+                    <li data-bn="https://www.virtualbox.org থেকে VirtualBox ডাউনলোড করুন"
+                        data-en="Download VirtualBox from https://www.virtualbox.org">https://www.virtualbox.org থেকে
+                        VirtualBox ডাউনলোড করুন</li>
+                    <li data-bn="ডাউনলোড করা ফাইলটি রান করুন" data-en="Run the downloaded file">ডাউনলোড করা ফাইলটি রান
+                        করুন</li>
+                    <li data-bn="'Next' বাটনে ক্লিক করে ইনস্টল করুন" data-en="Click 'Next' to install">'Next' বাটনে
+                        ক্লিক করে ইনস্টল করুন</li>
+                    <li data-bn="ইনস্টল শেষ হলে VirtualBox চালু করুন" data-en="Launch VirtualBox after installation">
+                        ইনস্টল শেষ হলে VirtualBox চালু করুন</li>
+                </ol>
+
+                <h2 data-bn="ধাপ ২: Kali Linux ডাউনলোড করা" data-en="Step 2: Downloading Kali Linux">ধাপ ২: Kali Linux
+                    ডাউনলোড করা</h2>
+                <p data-bn="Kali Linux হচ্ছে পেনিট্রেশন টেস্টিং এর জন্য বিশেষভাবে তৈরি একটি লিনাক্স ডিস্ট্রিবিউশন। এতে ৬০০+ হ্যাকিং টুল প্রি-ইনস্টল করা থাকে।"
+                    data-en="Kali Linux is a Linux distribution specially designed for penetration testing. It comes with 600+ pre-installed hacking tools.">
+                    Kali Linux হচ্ছে পেনিট্রেশন টেস্টিং এর জন্য বিশেষভাবে তৈরি একটি লিনাক্স ডিস্ট্রিবিউশন। এতে ৬০০+
+                    হ্যাকিং টুল প্রি-ইনস্টল করা থাকে।
+                </p>
+
+                <ol>
+                    <li data-bn="https://www.kali.org/get-kali/ এ যান" data-en="Go to https://www.kali.org/get-kali/">
+                        https://www.kali.org/get-kali/ এ যান</li>
+                    <li data-bn="'Virtual Machines' সেকশন থেকে VirtualBox version ডাউনলোড করুন"
+                        data-en="Download VirtualBox version from 'Virtual Machines' section">'Virtual Machines' সেকশন
+                        থেকে VirtualBox version ডাউনলোড করুন</li>
+                    <li data-bn="64-bit version বেছে নিন (যদি আপনার পিসি 64-bit হয়)"
+                        data-en="Select 64-bit version (if your PC is 64-bit)">64-bit version বেছে নিন (যদি আপনার পিসি
+                        64-bit হয়)</li>
+                </ol>
+
+                <div class="code-block">
+                    <pre><code># ডাউনলোড সাইজ প্রায় 3-4 GB
+# ডাউনলোড শেষ হলে .7z ফাইল extract করুন</code></pre>
+                </div>
+
+                <h2 data-bn="ধাপ ৩: Kali Linux VM সেটআপ করা" data-en="Step 3: Setting Up Kali Linux VM">ধাপ ৩: Kali
+                    Linux VM সেটআপ করা</h2>
+                <p data-bn="এখন আমরা VirtualBox এ Kali Linux ইম্পোর্ট করবো:"
+                    data-en="Now we'll import Kali Linux into VirtualBox:">
+                    এখন আমরা VirtualBox এ Kali Linux ইম্পোর্ট করবো:
+                </p>
+
+                <ol>
+                    <li data-bn="VirtualBox খুলুন" data-en="Open VirtualBox">VirtualBox খুলুন</li>
+                    <li data-bn="'Import' বাটনে ক্লিক করুন" data-en="Click 'Import' button">'Import' বাটনে ক্লিক করুন
+                    </li>
+                    <li data-bn="Extract করা .ova ফাইল সিলেক্ট করুন" data-en="Select the extracted .ova file">Extract
+                        করা .ova ফাইল সিলেক্ট করুন</li>
+                    <li data-bn="'Next' এবং তারপর 'Import' ক্লিক করুন" data-en="Click 'Next' then 'Import'">'Next' এবং
+                        তারপর 'Import' ক্লিক করুন</li>
+                    <li data-bn="Import শেষ হওয়ার জন্য অপেক্ষা করুন (৫-১০ মিনিট)"
+                        data-en="Wait for import to finish (5-10 minutes)">Import শেষ হওয়ার জন্য অপেক্ষা করুন (৫-১০
+                        মিনিট)</li>
+                </ol>
+
+                <h2 data-bn="ধাপ ৪: VM সেটিংস কনফিগার করা" data-en="Step 4: Configuring VM Settings">ধাপ ৪: VM সেটিংস
+                    কনফিগার করা</h2>
+                <p data-bn="Kali VM এর পারফরম্যান্স উন্নত করতে কিছু সেটিংস পরিবর্তন করুন:"
+                    data-en="Change some settings to improve Kali VM performance:">
+                    Kali VM এর পারফরম্যান্স উন্নত করতে কিছু সেটিংস পরিবর্তন করুন:
+                </p>
+
+                <ul>
+                    <li data-bn="RAM: কমপক্ষে 2GB, সম্ভব হলে 4GB" data-en="RAM: Minimum 2GB, 4GB if possible">RAM:
+                        কমপক্ষে 2GB, সম্ভব হলে 4GB</li>
+                    <li data-bn="CPU: 2 cores দিন" data-en="CPU: Allocate 2 cores">CPU: 2 cores দিন</li>
+                    <li data-bn="Network: 'NAT Network' বা 'Host-Only' সিলেক্ট করুন"
+                        data-en="Network: Select 'NAT Network' or 'Host-Only'">Network: 'NAT Network' বা 'Host-Only'
+                        সিলেক্ট করুন</li>
+                </ul>
+
+                <div class="alert-box warning">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <div>
+                        <strong data-bn="নেটওয়ার্ক সতর্কতা:" data-en="Network Warning:">নেটওয়ার্ক সতর্কতা:</strong>
+                        <span
+                            data-bn="'Bridged Adapter' ব্যবহার করবেন না যদি না আপনি জানেন কী করছেন। এটি আপনার নেটওয়ার্কে অন্যদের ক্ষতি করতে পারে।"
+                            data-en="Don't use 'Bridged Adapter' unless you know what you're doing. It could harm others on your network.">
+                            'Bridged Adapter' ব্যবহার করবেন না যদি না আপনি জানেন কী করছেন। এটি আপনার নেটওয়ার্কে অন্যদের
+                            ক্ষতি করতে পারে।
+                        </span>
+                    </div>
+                </div>
+
+                <h2 data-bn="ধাপ ৫: Metasploitable সেটআপ করা" data-en="Step 5: Setting Up Metasploitable">ধাপ ৫:
+                    Metasploitable সেটআপ করা</h2>
+                <p data-bn="Metasploitable হচ্ছে একটি ইচ্ছাকৃতভাবে দুর্বল করা VM যা হ্যাকিং অনুশীলনের জন্য তৈরি।"
+                    data-en="Metasploitable is an intentionally vulnerable VM designed for hacking practice.">
+                    Metasploitable হচ্ছে একটি ইচ্ছাকৃতভাবে দুর্বল করা VM যা হ্যাকিং অনুশীলনের জন্য তৈরি।
+                </p>
+
+                <ol>
+                    <li data-bn="Metasploitable 2 ডাউনলোড করুন" data-en="Download Metasploitable 2">Metasploitable 2
+                        ডাউনলোড করুন</li>
+                    <li data-bn="Zip ফাইল extract করুন" data-en="Extract the zip file">Zip ফাইল extract করুন</li>
+                    <li data-bn="VirtualBox এ নতুন VM তৈরি করুন" data-en="Create a new VM in VirtualBox">VirtualBox এ
+                        নতুন VM তৈরি করুন</li>
+                    <li data-bn="Type: Linux, Version: Ubuntu (64-bit) সিলেক্ট করুন"
+                        data-en="Select Type: Linux, Version: Ubuntu (64-bit)">Type: Linux, Version: Ubuntu (64-bit)
+                        সিলেক্ট করুন</li>
+                    <li data-bn="Existing .vmdk ফাইল ব্যবহার করুন" data-en="Use the existing .vmdk file">Existing .vmdk
+                        ফাইল ব্যবহার করুন</li>
+                </ol>
+
+                <h2 data-bn="ধাপ ৬: প্রথম হ্যাকিং টেস্ট" data-en="Step 6: First Hacking Test">ধাপ ৬: প্রথম হ্যাকিং টেস্ট
+                </h2>
+                <p data-bn="এবার আমরা একটি সাধারণ nmap scan চালাবো:" data-en="Now we'll run a simple nmap scan:">
+                    এবার আমরা একটি সাধারণ nmap scan চালাবো:
+                </p>
+
+                <div class="code-block">
+                    <pre><code># Terminal খুলুন এবং লিখুন:
+nmap -sV &lt;metasploitable-ip&gt;
+
+# Output দেখবেন:
+# PORT     STATE SERVICE     VERSION
+# 21/tcp   open  ftp         vsftpd 2.3.4
+# 22/tcp   open  ssh         OpenSSH 4.7
+# 80/tcp   open  http        Apache httpd 2.2.8</code></pre>
+                </div>
+
+                <div class="alert-box success">
+                    <i class="bi bi-check-circle"></i>
+                    <div>
+                        <strong data-bn="অভিনন্দন!" data-en="Congratulations!">অভিনন্দন!</strong>
+                        <span
+                            data-bn="আপনার পেনিট্রেশন টেস্টিং ল্যাব প্রস্তুত! এবার আপনি নিরাপদভাবে হ্যাকিং techniques শিখতে পারবেন।"
+                            data-en="Your penetration testing lab is ready! Now you can safely learn hacking techniques.">
+                            আপনার পেনিট্রেশন টেস্টিং ল্যাব প্রস্তুত! এবার আপনি নিরাপদভাবে হ্যাকিং techniques শিখতে
+                            পারবেন।
+                        </span>
+                    </div>
+                </div>
+
+                <h2 data-bn="পরবর্তী পদক্ষেপ" data-en="Next Steps">পরবর্তী পদক্ষেপ</h2>
+                <ol>
+                    <li data-bn="Nmap দিয়ে scanning শিখুন" data-en="Learn scanning with Nmap">Nmap দিয়ে scanning শিখুন
+                    </li>
+                    <li data-bn="Metasploit Framework ব্যবহার করুন" data-en="Use Metasploit Framework">Metasploit
+                        Framework ব্যবহার করুন</li>
+                    <li data-bn="Burp Suite দিয়ে web application টেস্ট করুন"
+                        data-en="Test web applications with Burp Suite">Burp Suite দিয়ে web application টেস্ট করুন</li>
+                    <li data-bn="TryHackMe বা HackTheBox এ প্র্যাক্টিস করুন"
+                        data-en="Practice on TryHackMe or HackTheBox">TryHackMe বা HackTheBox এ প্র্যাক্টিস করুন</li>
+                </ol>
+
+                <h2 data-bn="নিরাপত্তা টিপস" data-en="Security Tips">নিরাপত্তা টিপস</h2>
+                <ul>
+                    <li data-bn="সবসময় isolated network ব্যবহার করুন" data-en="Always use isolated network">সবসময়
+                        isolated network ব্যবহার করুন</li>
+                    <li data-bn="VM snapshot নিয়ে রাখুন (ভুল হলে ফিরে যেতে পারবেন)"
+                        data-en="Take VM snapshots (you can revert if something goes wrong)">VM snapshot নিয়ে রাখুন
+                        (ভুল হলে ফিরে যেতে পারবেন)</li>
+                    <li data-bn="শুধুমাত্র নিজের ল্যাবে টেস্ট করুন" data-en="Only test in your own lab">শুধুমাত্র নিজের
+                        ল্যাবে টেস্ট করুন</li>
+                    <li data-bn="অনুমতি ছাড়া কখনো বাস্তব সিস্টেমে হ্যাকিং করবেন না"
+                        data-en="Never hack real systems without permission">অনুমতি ছাড়া কখনো বাস্তব সিস্টেমে হ্যাকিং
+                        করবেন না</li>
+                </ul>
+
+            </div>
+        </div>
+    </article>
+
+    <!-- Share Section -->
+    <section class="share-section">
+        <div class="container">
+            <h3 data-bn="এই টিউটোরিয়াল শেয়ার করুন" data-en="Share this tutorial">এই টিউটোরিয়াল শেয়ার করুন</h3>
+            <div class="share-buttons">
+                <a href="#" class="share-btn twitter"><i class="bi bi-twitter"></i> Twitter</a>
+                <a href="#" class="share-btn facebook"><i class="bi bi-facebook"></i> Facebook</a>
+                <a href="#" class="share-btn linkedin"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                <a href="#" class="share-btn copy"><i class="bi bi-link-45deg"></i> <span data-bn="লিংক কপি করুন"
+                        data-en="Copy Link">লিংক কপি করুন</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Posts -->
+    <section class="related-posts">
+        <div class="container">
+            <h3 data-bn="সম্পর্কিত আর্টিকেল" data-en="Related Articles">সম্পর্কিত আর্টিকেল</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="tryhackme-advanced-web-challenge.html" class="related-card">
+                        <span class="category-badge ctf" data-bn="সিটিএফ রাইটআপ" data-en="CTF Writeup">সিটিএফ
+                            রাইটআপ</span>
+                        <h4 data-bn="TryHackMe এডভান্সড ওয়েব চ্যালেঞ্জ" data-en="TryHackMe Web Challenge">TryHackMe
+                            এডভান্সড ওয়েব চ্যালেঞ্জ</h4>
+                        <p data-bn="SQL ইনজেকশন শোষণ করার বিস্তারিত ওয়াকথ্রু..."
+                            data-en="Detailed SQL injection exploitation walkthrough...">SQL ইনজেকশন শোষণ করার বিস্তারিত
+                            ওয়াকথ্রু...</p>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="amar-prothom-bug-bounty.html" class="related-card">
+                        <span class="category-badge bugbounty" data-bn="বাগ বাউন্টি" data-en="Bug Bounty">বাগ
+                            বাউন্টি</span>
+                        <h4 data-bn="আমার প্রথম বাগ বাউন্টি অভিজ্ঞতা" data-en="My First Bug Bounty">আমার প্রথম বাগ
+                            বাউন্টি অভিজ্ঞতা</h4>
+                        <p data-bn="XSS দুর্বলততা আবিষ্কার এবং প্রথম পুরস্কার..."
+                            data-en="Discovering XSS vulnerability and first reward...">XSS দুর্বলতা আবিষ্কার এবং প্রথম
+                            পুরস্কার...</p>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="../blog.html" class="related-card">
+                        <span class="category-badge tutorial" data-bn="টিউটোরিয়াল"
+                            data-en="Tutorial">টিউটোরিয়াল</span>
+                        <h4 data-bn="আরো টিউটোরিয়াল" data-en="More Tutorials">আরো টিউটোরিয়াল</h4>
+                        <p data-bn="হ্যাকিং এবং সাইবার নিরাপত্তা টিউটোরিয়াল..."
+                            data-en="Hacking and cybersecurity tutorials...">হ্যাকিং এবং সাইবার নিরাপত্তা টিউটোরিয়াল...
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="blog-footer">
+        <div class="container">
+            <p data-bn="© ২০২৬ তৌফিক জামান টপু। সর্বস্বত্ব সংরক্ষিত।"
+                data-en="© 2026 Toufique Zaman Topu. All rights reserved.">© ২০২৬ তৌফিক জামান টপু। সর্বস্বত্ব সংরক্ষিত।
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="../assets/js/blog-post-translate.js"></script>
+</body>
+
+</html>

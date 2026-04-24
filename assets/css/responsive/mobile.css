@@ -1,0 +1,65 @@
+/* Mobile CSS  */
+
+@media screen and (max-width: 768px) {
+  /* Hero Section  */
+  .header__socials {
+    display: none;
+  }
+  .scroll__down {
+    display: none;
+  }
+  .hero-setion {
+    margin-top: 7rem !important; /* Push content down below fixed nav */
+  }
+
+  /* Nav Adjustments for Mobile */
+  nav {
+    padding: 0.35rem 0.8rem; /* Medium padding */
+    gap: 0.4rem; /* Medium gap */
+    top: 1rem;
+    width: max-content; /* Fit to content */
+    justify-content: center;
+  }
+  
+  .nav-link {
+    width: 2.8rem; /* Medium size */
+    height: 2.8rem; /* Medium size */
+    font-size: 1.05rem; /* Medium font size */
+  }
+  /* About Section */
+  .about__container {
+    grid-template-columns: 1fr;
+    gap: 5%;
+  }
+  .aboutimage-div .about__me {
+    width: 85%;
+  }
+  .about__cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .aboutimage-div {
+    display: flex;
+    justify-content: center;
+  }
+  .about-btn {
+    width: 100%;
+  }
+
+  /* Experience Section */
+  .experience-box {
+    padding: 0;
+  }
+  .experience {
+    margin: 10px 0;
+  }
+
+  /* Services  */
+  .service-card {
+    margin-bottom: 20px;
+  }
+
+  /* Testimonials  */
+  .swiper {
+    width: 100%;
+  }
+}
