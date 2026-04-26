@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- SEO Meta Tags -->
+    <title>Blog & Writeups - Toufique Zaman Topu</title>
+    <meta name="description" content="Read the latest cybersecurity writeups, bug bounty tips, and penetration testing tutorials by Toufique Zaman Topu." />
+    <meta name="keywords" content="cybersecurity blog, bug bounty writeup, CTF writeup, penetration testing tutorial, Toufique Zaman blog" />
+    <meta name="author" content="Toufique Zaman Topu" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Canonical URL (Replace with your actual domain) -->
+    <link rel="canonical" href="https://zaman-topu.github.io/blog.html" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blog & Writeups - Toufique Zaman Topu" />
+    <meta property="og:description" content="Read the latest cybersecurity writeups, bug bounty tips, and penetration testing tutorials." />
+    <meta property="og:url" content="https://zaman-topu.github.io/blog.html" />
+    <meta property="og:image" content="https://zaman-topu.github.io/assets/image/blog-og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog & Writeups - Toufique Zaman Topu" />
+    <meta name="twitter:description" content="Read the latest cybersecurity writeups, bug bounty tips, and penetration testing tutorials." />
+    <meta name="twitter:image" content="https://zaman-topu.github.io/assets/image/blog-og-image.jpg" />
+    <link rel="icon" type="image/svg+xml" href="assets/image/favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/blog.css?v=3" />
+    <!-- Google Fonts for Bangla -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="back-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    <span data-en="Back to Portfolio" data-bn="পোর্টফোলিওতে ফিরুন">Back to Portfolio</span>
+                </a>
+
+                <div class="blog-title-section">
+                    <h1 class="blog-main-title" data-en="Security Insights" data-bn="নিরাপত্তা অন্তর্দৃষ্টি">Security
+                        Insights</h1>
+                    <p class="blog-subtitle" data-en="Exploring the world of cybersecurity, one vulnerability at a time"
+                        data-bn="সাইবার নিরাপত্তার জগৎ অন্বেষণ, একবারে একটি দুর্বলতা">
+                        Exploring the world of cybersecurity, one vulnerability at a time
+                    </p>
+                </div>
+
+                <button class="lang-toggle" id="langToggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+                    <span id="langText">বাংলা</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="search-filter-section">
+        <div class="container">
+            <div class="search-filter-container">
+                <div class="search-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" id="searchInput" placeholder="Search articles..."
+                        data-placeholder-en="Search articles..." data-placeholder-bn="আর্টিকেল খুঁজুন...">
+                </div>
+
+                <div class="filter-tags">
+                    <button class="filter-tag active" data-category="all">
+                        <span data-en="All" data-bn="সব">All</span>
+                    </button>
+                    <button class="filter-tag" data-category="ctf">
+                        <span data-en="CTF Writeups" data-bn="CTF রাইটআপ">CTF Writeups</span>
+                    </button>
+                    <button class="filter-tag" data-category="bugbounty">
+                        <span data-en="Bug Bounty" data-bn="বাগ বাউন্টি">Bug Bounty</span>
+                    </button>
+                    <button class="filter-tag" data-category="tutorial">
+                        <span data-en="Tutorials" data-bn="টিউটোরিয়াল">Tutorials</span>
+                    </button>
+                    <button class="filter-tag" data-category="news">
+                        <span data-en="Security News" data-bn="নিরাপত্তা সংবাদ">Security News</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid Section -->
+    <section class="blog-grid-section">
+        <div class="container">
+            <div class="blog-grid" id="blogGrid">
+
+                <!-- Blog Card 1 - Sample Bangla (Featured) -->
+                <article class="blog-card featured" data-category="ctf">
+                    <div class="blog-card-cover"></div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-header">
+                            <span class="category-badge ctf" data-en="CTF Writeup" data-bn="CTF রাইটআপ">CTF Writeup</span>
+                            <span class="read-time">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:2px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span data-en="5 min read" data-bn="৫ মিনিট">5 min read</span>
+                            </span>
+                        </div>
+
+                        <div class="blog-card-content">
+                            <h3 class="blog-card-title" data-en="How I Solved TryHackMe's Advanced Web Challenge"
+                                data-bn="কিভাবে আমি TryHackMe এর এডভান্সড ওয়েব চ্যালেঞ্জ সমাধান করলাম">
+                                How I Solved TryHackMe's Advanced Web Challenge
+                            </h3>
+
+                            <p class="blog-card-excerpt"
+                                data-en="A detailed walkthrough of exploiting SQL injection and privilege escalation in a realistic web application environment."
+                                data-bn="একটি বাস্তবসম্মত ওয়েব অ্যাপ্লিকেশন পরিবেশে SQL ইনজেকশন এবং প্রিভিলেজ এস্কেলেশন কাজে লাগানোর বিস্তারিত ওয়াকথ্রু।">
+                                A detailed walkthrough of exploiting SQL injection and privilege escalation in a realistic
+                                web application environment.
+                            </p>
+
+                            <div class="blog-card-meta">
+                                <div class="author-info">
+                                    <img src="./assets/image/favicon.svg" alt="Author" class="author-avatar">
+                                    <span class="author-name">Toufique Zaman</span>
+                                </div>
+                                <span class="post-date">Feb 10, 2026</span>
+                            </div>
+                        </div>
+
+                        <div class="blog-card-footer">
+                            <a href="blog/tryhackme-advanced-web-challenge.html" class="read-more-btn">
+                                <span data-en="Read More" data-bn="আরও পড়ুন">Read More</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 - Sample English -->
+                <article class="blog-card" data-category="bugbounty">
+                    <div class="blog-card-cover"></div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-header">
+                            <span class="category-badge bugbounty" data-en="Bug Bounty" data-bn="বাগ বাউন্টি">বাগ
+                                বাউন্টি</span>
+                            <span class="read-time">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:2px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span data-en="8 min read" data-bn="৮ মিনিট">৮ মিনিট</span>
+                            </span>
+                        </div>
+
+                        <div class="blog-card-content">
+                            <h3 class="blog-card-title" data-en="My First Bug Bounty Experience"
+                                data-bn="আমার প্রথম বাগ বাউন্টি অভিজ্ঞতা">
+                                আমার প্রথম বাগ বাউন্টি অভিজ্ঞতা
+                            </h3>
+
+                            <p class="blog-card-excerpt"
+                                data-en="How I discovered an XSS vulnerability in a popular website and won my first reward."
+                                data-bn="কিভাবে আমি একটি জনপ্রিয় ওয়েবসাইটে XSS দুর্বলতা খুঁজে পেয়েছি এবং আমার প্রথম বাগ বাউন্টি পুরস্কার জিতেছি।">
+                                কিভাবে আমি একটি জনপ্রিয় ওয়েবসাইটে XSS দুর্বলতা খুঁজে পেয়েছি এবং আমার প্রথম বাগ বাউন্টি
+                                পুরস্কার জিতেছি।
+                            </p>
+
+                            <div class="blog-card-meta">
+                                <div class="author-info">
+                                    <img src="./assets/image/favicon.svg" alt="Author" class="author-avatar">
+                                    <span class="author-name">Toufique Zaman</span>
+                                </div>
+                                <span class="post-date">Feb 8, 2026</span>
+                            </div>
+                        </div>
+
+                        <div class="blog-card-footer">
+                            <a href="blog/amar-prothom-bug-bounty.html" class="read-more-btn">
+                                <span data-en="Read More" data-bn="আরও পড়ুন">আরও পড়ুন</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 - Tutorial -->
+                <article class="blog-card" data-category="tutorial">
+                    <div class="blog-card-cover"></div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-header">
+                            <span class="category-badge tutorial" data-en="Tutorial"
+                                data-bn="টিউটোরিয়াল">টিউটোরিয়াল</span>
+                            <span class="read-time">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:2px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span data-en="12 min read" data-bn="১২ মিনিট">১২ মিনিট</span>
+                            </span>
+                        </div>
+
+                        <div class="blog-card-content">
+                            <h3 class="blog-card-title" data-en="Setting Up Penetration Testing Lab"
+                                data-bn="পেনিট্রেশন টেস্টিং ল্যাব সেটআপ">
+                                পেনিট্রেশন টেস্টিং ল্যাব সেটআপ
+                            </h3>
+
+                            <p class="blog-card-excerpt"
+                                data-en="Complete guide to create your hacking lab with VirtualBox and Kali Linux."
+                                data-bn="VirtualBox এবং Kali Linux দিয়ে নিজের হ্যাকিং ল্যাব তৈরির সম্পূর্ণ গাইড।">
+                                VirtualBox এবং Kali Linux দিয়ে নিজের হ্যাকিং ল্যাব তৈরির সম্পূর্ণ গাইড।
+                            </p>
+
+                            <div class="blog-card-meta">
+                                <div class="author-info">
+                                    <img src="./assets/image/favicon.svg" alt="Author" class="author-avatar">
+                                    <span class="author-name">Toufique Zaman</span>
+                                </div>
+                                <span class="post-date">Feb 5, 2026</span>
+                            </div>
+                        </div>
+
+                        <div class="blog-card-footer">
+                            <a href="blog/penetration-testing-lab-setup.html" class="read-more-btn">
+                                <span data-en="Read More" data-bn="আরও পড়ুন">আরও পড়ুন</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 4 - Security News -->
+                <article class="blog-card" data-category="news">
+                    <div class="blog-card-cover"></div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-header">
+                            <span class="category-badge news" data-en="Security News" data-bn="নিরাপত্তা সংবাদ">Security
+                                News</span>
+                            <span class="read-time">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:2px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span data-en="4 min read" data-bn="৪ মিনিট">4 min read</span>
+                            </span>
+                        </div>
+
+                        <div class="blog-card-content">
+                            <h3 class="blog-card-title" data-en="Understanding the Latest Zero-Day Vulnerabilities in 2026"
+                                data-bn="২০২৬ সালে সর্বশেষ জিরো-ডে দুর্বলতা বোঝা">
+                                Understanding the Latest Zero-Day Vulnerabilities in 2026
+                            </h3>
+
+                            <p class="blog-card-excerpt"
+                                data-en="Analysis of recent zero-day exploits and what organizations need to know to protect their systems."
+                                data-bn="সাম্প্রতিক জিরো-ডে এক্সপ্লয়েট বিশ্লেষণ এবং তাদের সিস্টেম রক্ষা করতে প্রতিষ্ঠানগুলির কী জানা দরকার।">
+                                Analysis of recent zero-day exploits and what organizations need to know to protect their
+                                systems.
+                            </p>
+
+                            <div class="blog-card-meta">
+                                <div class="author-info">
+                                    <img src="./assets/image/favicon.svg" alt="Author" class="author-avatar">
+                                    <span class="author-name">Toufique Zaman</span>
+                                </div>
+                                <span class="post-date">Feb 1, 2026</span>
+                            </div>
+                        </div>
+
+                        <div class="blog-card-footer">
+                            <a href="#" class="read-more-btn">
+                                <span data-en="Read More" data-bn="আরও পড়ুন">Read More</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- 
+            =============================================
+            BLOG POST TEMPLATE (COPY & PASTE TO ADD NEW)
+            =============================================
+            
+            <article class="blog-card" data-category="CATEGORY_SLUG">
+              <div class="blog-card-header">
+                <span class="category-badge CATEGORY_CLASS" data-en="CATEGORY_NAME" data-bn="ক্যাটাগরি নাম">CATEGORY_NAME</span>
+                <span class="read-time">
+                  <i class="bi bi-clock"></i>
+                  <span data-en="X min read" data-bn="X মিনিট">X min read</span>
+                </span>
+              </div>
+              
+              <div class="blog-card-content">
+                <h3 class="blog-card-title" data-en="ENGLISH_TITLE" 
+                    data-bn="BANGLA_TITLE">
+                  ENGLISH_TITLE
+                </h3>
+                
+                <p class="blog-card-excerpt" data-en="ENGLISH_EXCERPT" 
+                   data-bn="BANGLA_EXCERPT">
+                  ENGLISH_EXCERPT
+                </p>
+                
+                <div class="blog-card-meta">
+                  <div class="author-info">
+                    <img src="./assets/image/favicon.svg" alt="Author" class="author-avatar">
+                    <span class="author-name">Toufique Zaman</span>
+                  </div>
+                  <span class="post-date">DATE_HERE</span>
+                </div>
+              </div>
+              
+              <div class="blog-card-footer">
+                <a href="#" class="read-more-btn">
+                  <span data-en="Read More" data-bn="আরও পড়ুন">Read More</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+            
+            Categories: ctf, bugbounty, tutorial, news
+            Classes: ctf, bugbounty, tutorial, news
+            -->
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:1rem;opacity:0.5;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <h3 data-en="No articles found" data-bn="কোন আর্টিকেল পাওয়া যায়নি">No articles found</h3>
+                <p data-en="Try adjusting your search or filter criteria"
+                    data-bn="আপনার অনুসন্ধান বা ফিল্টার মানদণ্ড সামঞ্জস্য করার চেষ্টা করুন">
+                    Try adjusting your search or filter criteria
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+  <footer class="jg-footer">
+    <div class="jg-footer__body">
+      <div class="container">
+        <div class="row align-items-center py-4">
+          <div class="col-12 col-md-7">
+            <div class="jg-footer__logo">Toufique Zaman Topu</div>
+            <div class="jg-footer__meta mt-2">
+              <span>Cybersecurity Researcher</span>
+              <span class="jg-footer__meta-sep">&#x2016;</span>
+              <span>Developer &amp; Founder, Bug Mohol</span>
+            </div>
+            <div class="jg-footer__copy mt-1">
+              &copy;<span id="currentYear">2026</span> Toufique Zaman Topu &mdash; All Rights Reserved.
+            </div>
+          </div>
+          <div class="col-12 col-md-5 text-md-end mt-4 mt-md-0">
+            <div class="jg-footer__follow-label">Follow Me</div>
+            <div class="jg-footer__socials">
+              <a href="https://www.facebook.com/zamantopu.official/" target="_blank" title="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+              <a href="https://www.instagram.com/zamantopu.official/" target="_blank" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+              <a href="https://www.linkedin.com/in/zaman-topu/" target="_blank" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              <a href="https://tryhackme.com/p/zamantopu" target="_blank" title="TryHackMe"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></a>
+              <a href="https://github.com/zaman-topu" target="_blank" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jg-footer__navbar">
+      <div class="container">
+        <div class="jg-footer__navlinks">
+          <a href="index.html#about">About Me</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#portfolio">Certifications</a>
+          <a href="index.html#achievements">Achievements</a>
+          <a href="blog.html">Blog</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/blog-posts-data.js?v=2"></script>
+    <script src="assets/js/blog.js?v=2"></script>
+</body>
+
+</html>

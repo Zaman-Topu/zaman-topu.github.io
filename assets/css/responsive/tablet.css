@@ -1,0 +1,19 @@
+@media screen and (max-width: 992px) {
+  /* About */
+  .about__container { grid-template-columns: 100%; }
+  .about__me { width: 50%; }
+  .aboutimage-div { display: flex; justify-content: center; }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+
+  /* Achievements */
+  .achievements__cards { grid-template-columns: 1fr 1fr; }
+
+  /* Swiper */
+  .swiper { width: 100%; }
+
+  /* Footer socials alignment */
+  .col-12.col-md-5 { text-align: left !important; }
+  .jg-footer__socials { justify-content: flex-start; }
+}

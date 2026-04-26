@@ -1,0 +1,158 @@
+/* ====================================================
+   LATEST ARTICLES — AMOLED Black + White
+   ==================================================== */
+
+#latest-articles { position: relative; z-index: 1; }
+
+/* ─── Card ─── */
+.blog-preview-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-preview-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.blog-preview-card:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.55);
+}
+
+.blog-preview-card:hover::before { opacity: 1; }
+
+.blog-preview-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
+}
+
+/* ─── Category Badge ─── */
+.category-badge-sm,
+.la-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 0.22rem 0.7rem;
+  border-radius: 2rem;
+  width: fit-content;
+  border: 1px solid var(--color-border);
+  color: rgba(255,255,255,0.5);
+  background: var(--color-surface-2);
+}
+
+.category-badge-sm.ctf,
+.category-badge-sm.bugbounty,
+.category-badge-sm.tutorial {
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.55);
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* ─── Title & Excerpt ─── */
+.blog-preview-card h3 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.45;
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+}
+
+.blog-preview-card p {
+  font-size: 0.875rem;
+  color: var(--color-light);
+  margin: 0;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.65;
+}
+
+/* ─── Meta row (date · readtime) ─── */
+.la-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.6rem;
+}
+
+.la-date, .la-read {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  letter-spacing: 0.3px;
+}
+
+.la-sep {
+  color: var(--color-border-hover);
+  font-size: 0.7rem;
+}
+
+/* ─── Read More link ─── */
+.read-more-link {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.read-more-link:hover {
+  color: var(--color-white);
+  gap: 0.7rem;
+}
+
+/* ─── Section header row ─── */
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+}
+
+.view-all-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  align-self: flex-end;
+  padding-bottom: 0.1rem;
+}
+
+.view-all-link:hover {
+  color: var(--color-white);
+  gap: 0.6rem;
+}

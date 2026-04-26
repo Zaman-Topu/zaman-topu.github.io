@@ -1,0 +1,143 @@
+/* ====================================================
+   NAV — AMOLED Black + White Floating Pill (Premium)
+   ==================================================== */
+
+nav {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1.1rem;
+  z-index: 9999;
+  position: fixed;
+  top: 1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 0.3rem;
+  border-radius: 3rem;
+  backdrop-filter: blur(32px) saturate(250%);
+  -webkit-backdrop-filter: blur(32px) saturate(250%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.8),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  animation: waveGlow 3s linear infinite;
+  pointer-events: none;
+}
+
+nav:hover::before {
+  opacity: 1;
+}
+
+nav:hover {
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.8),
+    0 1px 0 rgba(255,255,255,0.08) inset,
+    0 0 0 1px rgba(0,0,0,0.5);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+nav:active {
+  transform: translateX(-50%) scale(0.96);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.9),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.1);
+}
+
+nav:active::before {
+  opacity: 1;
+  filter: brightness(1.6) saturate(1.8);
+}
+
+@keyframes waveGlow {
+  0%   { box-shadow: 0 -8px 25px rgba(0, 255, 255, 0.25), 0 8px 25px rgba(255, 0, 255, 0.25); }
+  25%  { box-shadow: 8px 0 25px rgba(255, 255, 0, 0.25), -8px 0 25px rgba(0, 255, 255, 0.25); }
+  50%  { box-shadow: 0 8px 25px rgba(255, 0, 255, 0.25), 0 -8px 25px rgba(255, 255, 0, 0.25); }
+  75%  { box-shadow: -8px 0 25px rgba(0, 255, 255, 0.25), 8px 0 25px rgba(255, 0, 255, 0.25); }
+  100% { box-shadow: 0 -8px 25px rgba(0, 255, 255, 0.25), 0 8px 25px rgba(255, 0, 255, 0.25); }
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  background: transparent;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1.05rem;
+  line-height: 1;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-link svg {
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+  pointer-events: none;
+}
+
+.nav-link:hover svg {
+  transform: scale(1.15);
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-white);
+}
+
+/* Active — White Bubble */
+.nav-link.active svg {
+  transform: none;
+}
+.nav-link.active {
+  background: var(--color-white);
+  color: var(--color-bg);
+  box-shadow:
+    0 2px 12px rgba(255, 255, 255, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.nav-link.active i {
+  transform: none;
+}
+
+.nav-link.active:hover {
+  background: rgba(255,255,255,0.92);
+  color: var(--color-bg);
+}

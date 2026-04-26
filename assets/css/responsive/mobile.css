@@ -1,0 +1,78 @@
+/* ====================================================
+   MOBILE RESPONSIVE — max-width: 768px
+   ==================================================== */
+
+@media screen and (max-width: 768px) {
+  /* Preloader */
+  .pl-logo { font-size: 2.2rem; }
+  .pl-terminal, .pl-progress-wrap { min-width: 280px; width: 280px; }
+  .pl-progress-label { font-size: 0.8rem; margin-top: 1rem; }
+
+  /* Nav */
+  nav {
+    padding: 0.35rem 0.6rem;
+    top: 1rem;
+    gap: 0.2rem;
+  }
+  .nav-link {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.95rem;
+  }
+
+  /* Hero */
+  .hero-section { padding-top: 5rem; }
+  .hero-name { font-size: clamp(2rem, 12vw, 3.8rem); line-height: 1; }
+  .hero-topbar { flex-direction: column; align-items: flex-start; gap: 0.8rem; margin-bottom: 2rem; }
+  
+  .hero-info-strip { 
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 1.2rem; 
+    padding-left: 1rem;
+    border-left: 2px solid var(--color-border);
+    border-top: none;
+    border-bottom: none;
+  }
+  .info-divider { display: none; }
+  
+  .hero-footer-strip { flex-direction: column; align-items: flex-start; gap: 2rem; }
+  .hero-cta-group { width: 100%; display: flex; flex-direction: column; gap: 1rem; }
+  .btn-cta-primary, .btn-cta-ghost { width: 100%; justify-content: center; }
+  .hero-scroll-hint { display: none; }
+
+  /* About */
+  .about__container { grid-template-columns: 1fr; gap: 2rem; }
+  .about__cards { grid-template-columns: 1fr; }
+  .aboutimage-div { display: flex; justify-content: center; }
+  .about-btn { width: 100%; justify-content: center; }
+
+  /* Contact Grid */
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* Stats */
+  .stats-row { flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
+  .stat-num { font-size: 1.8rem; }
+  .stat-div { display: none; }
+
+  /* Achievements */
+  .achievements__cards { grid-template-columns: 1fr; gap: 1.5rem; }
+
+  /* Footer */
+  .jg-footer { padding: 4rem 0 2rem; }
+  .jg-footer__meta { display: flex; flex-direction: column; gap: 0.2rem; }
+  .jg-footer__meta-sep { display: none; }
+  .jg-footer__socials { justify-content: flex-start; gap: 1rem; margin-top: 1rem; }
+  .jg-footer__navlinks { gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem; }
+  .jg-footer__brand h3 { font-size: 1.8rem; }
+}
+
+@media screen and (max-width: 576px) {
+  .hero-name { font-size: clamp(2rem, 10vw, 3rem); }
+  .section-heading { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+  .cert-btns { flex-direction: column; gap: 0.5rem; }
+  .cert-btn-outline, .cert-btn-solid { width: 100%; text-align: center; }
+  .svc-card { padding: 1.5rem; }
+  .portfolio-btn { flex-direction: column; width: 100%; }
+  .portfolio-btn .outline-btn, .portfolio-btn .solid-btn { width: 100%; text-align: center; }
+}

@@ -1,0 +1,135 @@
+/* ====================================================
+   PRELOADER — Terminal / Cybersecurity Theme
+   ==================================================== */
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #000000;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#preloader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Hard hide after animation completes */
+#preloader.done {
+  display: none !important;
+}
+
+/* Logo block */
+.pl-logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: 0.15em;
+  animation: pl-fade-in 0.5s ease forwards;
+}
+
+.pl-logo-bracket {
+  color: rgba(255,255,255,0.2);
+  font-weight: 300;
+}
+
+.pl-logo-name {
+  color: #ffffff;
+}
+
+.pl-logo-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background: #fff;
+  margin-left: 4px;
+  border-radius: 2px;
+  animation: pl-blink 0.8s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes pl-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Terminal lines */
+.pl-terminal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  min-width: 280px;
+  animation: pl-fade-in 0.5s ease 0.2s both;
+}
+
+.pl-line {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  opacity: 0;
+  transform: translateX(-8px);
+}
+
+.pl-line.show {
+  animation: pl-line-in 0.3s ease forwards;
+}
+
+.pl-prompt { color: rgba(255,255,255,0.15); }
+.pl-cmd    { color: rgba(255,255,255,0.5); }
+.pl-ok     { color: rgba(255,255,255,0.6); margin-left: auto; font-size: 0.65rem; letter-spacing: 1px; }
+
+@keyframes pl-line-in {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Progress bar */
+.pl-progress-wrap {
+  width: 280px;
+  animation: pl-fade-in 0.5s ease 0.3s both;
+}
+
+.pl-progress-track {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.pl-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+.pl-progress-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.2);
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 1px;
+}
+
+@keyframes pl-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

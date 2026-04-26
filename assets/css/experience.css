@@ -1,0 +1,90 @@
+/* ====================================================
+   EXPERIENCE — AMOLED Black + White
+   ==================================================== */
+
+.experience {
+  margin-bottom: 1rem;
+}
+
+.experience .about__card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+
+.experience .about__card h3 {
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.experience-box {
+  flex-wrap: wrap;
+  padding: 0;
+  gap: 0;
+}
+
+.experience-content {
+  width: 50%;
+  text-align: left;
+  padding: 0.7rem 1rem 0.7rem 1.2rem;
+  transition: var(--transition);
+  position: relative;
+  border-left: 2px solid transparent;
+}
+
+.experience-content::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 15%;
+  height: 0;
+  width: 2px;
+  background: var(--color-white);
+  transition: height 0.3s ease;
+}
+
+.experience-content:hover::before {
+  height: 70%;
+}
+
+.experience-content:hover {
+  transform: translateX(4px);
+  background: rgba(255,255,255,0.02);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.experience-content i {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.5);
+  margin-right: 0.5rem;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.experience-content:hover i {
+  color: var(--color-white);
+}
+
+.experience-content h4 {
+  margin-top: 4px;
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.experience-content small {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  font-weight: 400;
+}
+
+.experience-content:hover small {
+  color: var(--color-secondary);
+}

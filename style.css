@@ -1,0 +1,162 @@
+/* ====================================================
+   GLOBAL RESET & DESIGN SYSTEM
+   Theme: AMOLED Black + Pure White
+   ==================================================== */
+
+/* ── ALL @import MUST come first ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url(./assets/css/preloader.css);
+@import url('./assets/css/nav.css?v=2');
+@import url(./assets/css/hero.css);
+@import url(./assets/css/about.css);
+@import url(./assets/css/experience.css);
+@import url(./assets/css/services.css);
+@import url(./assets/css/portfolio.css);
+@import url(./assets/css/testimonials.css);
+@import url(./assets/css/contact.css);
+@import url(./assets/css/footer.css);
+@import url(./assets/css/achievements.css);
+@import url(./assets/css/latest_articles.css);
+@import url(./assets/css/components.css);
+@import url(./assets/css/animations.css);
+@import url(./assets/css/responsive/mobile.css);
+@import url(./assets/css/responsive/tablet.css);
+
+/* ============================================
+   EVERYTHING BELOW — after all @import
+   ============================================ */
+
+/* ── Design Tokens ── */
+:root {
+  --color-bg:           #000000;
+  --color-bg-varient:   #0A0A0A;
+  --color-surface:      #0d0d0d;
+  --color-surface-2:    #161616;
+  --color-primary:      #FFFFFF;
+  --color-secondary:    rgba(255, 255, 255, 0.55);
+  --color-primary-varient: rgba(255, 255, 255, 0.08);
+  --color-white:        #FFFFFF;
+  --color-light:        rgba(255, 255, 255, 0.6);
+  --color-muted:        rgba(255, 255, 255, 0.28);
+  --color-border:       rgba(255, 255, 255, 0.07);
+  --color-border-hover: rgba(255, 255, 255, 0.22);
+  --font-main:   'Inter', 'Noto Sans Bengali', 'Hind Siliguri', -apple-system, sans-serif;
+  --font-mono:   'JetBrains Mono', monospace;
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  18px;
+  --radius-xl:  28px;
+  --transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 420ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── Bootstrap Overrides ── */
+body, html { background-color: #000000 !important; }
+.container, .container-fluid, .row, [class*="col-"] { background-color: transparent !important; }
+nav ul, nav ol { list-style: none !important; padding-left: 0 !important; margin-bottom: 0 !important; }
+nav li { list-style: none !important; }
+section { margin-top: 0 !important; }
+.modal-content { background: #0d0d0d !important; border: 1px solid rgba(255,255,255,0.07) !important; }
+.modal-header, .modal-footer { border-color: rgba(255,255,255,0.07) !important; }
+.btn-close-white { filter: invert(1); }
+.text-secondary { color: rgba(255,255,255,0.55) !important; }
+
+/* ── Base Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-white);
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5, h6 { font-weight: 700; margin: 0; line-height: 1.2; letter-spacing: -0.02em; }
+h2 { color: var(--color-white); font-size: clamp(1.4rem, 3vw, 1.8rem); letter-spacing: -0.01em; }
+h3 { color: var(--color-white); font-size: 1.15rem; }
+h5 { font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 4px; color: var(--color-muted); }
+section { scroll-margin-top: 5rem; }
+p { font-size: 0.95rem; font-weight: 300; color: var(--color-light); }
+a { color: var(--color-white); text-decoration: none; transition: var(--transition); }
+a:hover { color: var(--color-primary); }
+
+/* ── Shared Card Base ── */
+.about__card, .achievements__card, .service-card, .portfolio-card, .contact-card, .blog-preview-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+/* ── Buttons ── */
+.solid-btn {
+  display: inline-block; padding: 0.85rem 2rem;
+  background: var(--color-white); color: var(--color-bg) !important;
+  border-radius: var(--radius-sm); font-weight: 600; font-size: 0.9rem;
+  border: 1px solid var(--color-white); transition: var(--transition);
+}
+.solid-btn:hover { background: transparent; color: var(--color-white) !important; }
+
+.outline-btn {
+  display: inline-block; padding: 0.85rem 2rem;
+  background: transparent; color: var(--color-white);
+  border-radius: var(--radius-sm); font-weight: 500; font-size: 0.9rem;
+  border: 1px solid var(--color-border-hover); transition: var(--transition);
+}
+.outline-btn:hover { background: var(--color-white); color: var(--color-bg) !important; border-color: var(--color-white); }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.3); }
+
+/* ── Selection ── */
+::selection { background: rgba(255,255,255,0.15); color: #fff; }
+
+/* ── Hind Siliguri utility (Bengali text) ── */
+.hind-siliguri {
+  font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif !important;
+}
+
+/* ── Latest Articles dynamic cards ── */
+.la-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--color-border);
+}
+.la-date, .la-read {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  letter-spacing: 0.5px;
+}
+.la-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.22rem 0.7rem;
+  border-radius: 2rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+  background: var(--color-surface-2);
+  width: fit-content;
+}
