@@ -36,4 +36,3 @@ Creating a new blog post is simple and structured:
 ## 📞 Connect
 * **Email**: topu7252@gmail.com
 * **Telegram**: @anonymousnexus
-* **WhatsApp**: +8801824989454
